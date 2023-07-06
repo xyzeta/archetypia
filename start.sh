@@ -1,1 +1,1 @@
-python app.py
+python Archetypia_Kartenspiel.py
