@@ -1,0 +1,6 @@
+Pillow
+matplotlib
+voila>=0.2.11
+pandas
+ipywidgets
+jupyterlab>=3.1
