@@ -42,15 +42,6 @@ color_schemes = [
         "bg_color_window": "#27AE60"
     },
     {
-        "name": "Orangetöne",
-        "bg_color_primary": "#D35400",
-        "bg_color_secondary": "#E67E22",
-        "bg_color_button": "#F39C12",
-        "text_color": "#FFFFFF",
-        "accent_color": "#FF8C00",
-        "bg_color_window": "#E67E22"
-    },
-    {
         "name": "Grautöne",
         "bg_color_primary": "#555555",
         "bg_color_secondary": "#777777",
