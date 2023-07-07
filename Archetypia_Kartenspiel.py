@@ -101,7 +101,8 @@ class ArchetypiaGame:
     def __init__(self, root):
         self.root = root
         self.root.title("Archetypia")
-        self.current_color_scheme = random.choice(color_schemes)
+        random.shuffle(color_schemes)  # Mischt die Reihenfolge der Farbschemata
+        self.current_color_scheme = color_schemes[0]  # Wählt das erste Farbschema
         self.interpretations = self.load_interpretations()
 
         self.root.wm_attributes("-topmost", 1)
