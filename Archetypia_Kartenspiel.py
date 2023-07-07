@@ -24,6 +24,15 @@ color_schemes = [
         "bg_color_window": "#8E353D"
     },
     {
+        "name": "Rottöne",
+        "bg_color_primary": "#8E353D",
+        "bg_color_secondary": "#A93241",
+        "bg_color_button": "#C0392B",
+        "text_color": "#FFFFFF",
+        "accent_color": "#F39C12",
+        "bg_color_window": "#8E353D"
+    },
+    {
         "name": "Violetttöne",
         "bg_color_primary": "#6C3483",
         "bg_color_secondary": "#7D3C98",
