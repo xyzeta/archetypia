@@ -101,7 +101,7 @@ class ArchetypiaGame:
 
         # Fenstergröße
         window_width = 800
-        window_height = 900
+        window_height = 870
 
         # Bildschirmgröße
         screen_width = self.root.winfo_screenwidth()
