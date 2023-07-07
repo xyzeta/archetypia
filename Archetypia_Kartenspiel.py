@@ -15,13 +15,13 @@ color_schemes = [
         "bg_color_window": "#34495E"
     },
     {
-        "name": "Rottöne",
-        "bg_color_primary": "#8E353D",
-        "bg_color_secondary": "#A93241",
-        "bg_color_button": "#C0392B",
-        "text_color": "#FFFFFF",
-        "accent_color": "#F39C12",
-        "bg_color_window": "#8E353D"
+        "name": "Blau-Gold",
+        "bg_color_primary": "#0000FF",
+        "bg_color_secondary": "#4169E1",
+        "bg_color_button": "#6495ED",
+        "text_color": "#FFD700",
+        "accent_color": "#E74C3C",
+        "bg_color_window": "#4169E1"
     },
     {
         "name": "Rottöne",
@@ -31,6 +31,15 @@ color_schemes = [
         "text_color": "#FFFFFF",
         "accent_color": "#F39C12",
         "bg_color_window": "#8E353D"
+    },
+    {
+        "name": "Kräftige Rottöne",
+        "bg_color_primary": "#FF0000",
+        "bg_color_secondary": "#FF4500",
+        "bg_color_button": "#DC143C",
+        "text_color": "#FFFFFF",
+        "accent_color": "#FF8C00",
+        "bg_color_window": "#FF4500"
     },
     {
         "name": "Violetttöne",
@@ -49,6 +58,15 @@ color_schemes = [
         "text_color": "#FFFFFF",
         "accent_color": "#F39C12",
         "bg_color_window": "#27AE60"
+    },
+    {
+        "name": "Orangetöne",
+        "bg_color_primary": "#D35400",
+        "bg_color_secondary": "#E67E22",
+        "bg_color_button": "#F39C12",
+        "text_color": "#FFFFFF",
+        "accent_color": "#3498DB",
+        "bg_color_window": "#E67E22"
     },
     {
         "name": "Grautöne",
@@ -74,7 +92,7 @@ color_schemes = [
         "bg_color_secondary": "#E59866",
         "bg_color_button": "#DC7633",
         "text_color": "#FFFFFF",
-        "accent_color": "#1ABC9C",
+        "accent_color": "#F4D03F",
         "bg_color_window": "#E67E22"
     },
     {
