@@ -31,9 +31,71 @@ color_schemes = [
         "text_color": "#FFFFFF",
         "accent_color": "#F1C40F",
         "bg_color_window": "#7D3C98"
+    },
+    {
+        "name": "Grüntöne",
+        "bg_color_primary": "#1E8449",
+        "bg_color_secondary": "#27AE60",
+        "bg_color_button": "#2ECC71",
+        "text_color": "#FFFFFF",
+        "accent_color": "#F39C12",
+        "bg_color_window": "#27AE60"
+    },
+    {
+        "name": "Orangetöne",
+        "bg_color_primary": "#D35400",
+        "bg_color_secondary": "#E67E22",
+        "bg_color_button": "#F39C12",
+        "text_color": "#FFFFFF",
+        "accent_color": "#3498DB",
+        "bg_color_window": "#E67E22"
+    },
+    {
+        "name": "Grautöne",
+        "bg_color_primary": "#555555",
+        "bg_color_secondary": "#777777",
+        "bg_color_button": "#999999",
+        "text_color": "#FFFFFF",
+        "accent_color": "#FF0000",
+        "bg_color_window": "#333333"
+    },
+    {
+        "name": "Pastellfarben",
+        "bg_color_primary": "#F9E79F",
+        "bg_color_secondary": "#AED6F1",
+        "bg_color_button": "#F5B7B1",
+        "text_color": "#333333",
+        "accent_color": "#C39BD3",
+        "bg_color_window": "#D7BDE2"
+    },
+    {
+        "name": "Sonnenuntergang",
+        "bg_color_primary": "#F4D03F",
+        "bg_color_secondary": "#E59866",
+        "bg_color_button": "#DC7633",
+        "text_color": "#FFFFFF",
+        "accent_color": "#1ABC9C",
+        "bg_color_window": "#E67E22"
+    },
+    {
+        "name": "Herbstlaub",
+        "bg_color_primary": "#D35400",
+        "bg_color_secondary": "#8E44AD",
+        "bg_color_button": "#E74C3C",
+        "text_color": "#FFFFFF",
+        "accent_color": "#27AE60",
+        "bg_color_window": "#E67E22"
+    },
+    {
+        "name": "Pastellblüten",
+        "bg_color_primary": "#FADBD8",
+        "bg_color_secondary": "#85C1E9",
+        "bg_color_button": "#F8C471",
+        "text_color": "#333333",
+        "accent_color": "#E67E22",
+        "bg_color_window": "#F9E79F"
     }
 ]
-
 
 class ArchetypiaGame:
     def __init__(self, root):
