@@ -1,4 +1,5 @@
 import tkinter as tk
+import tkinter.font as tkfont
 import random
 import json
 from PIL import ImageTk, Image
@@ -104,6 +105,9 @@ class ArchetypiaGame:
         self.text_frame = tk.Frame(self.container_frame)
         self.text_frame.pack(side=tk.TOP, padx=10)
 
+        # Erstellen einer benutzerdefinierten Schriftart mit Schriftgröße 8 und Schriftart "Arial"
+        custom_font = tkfont.Font(family="Helvetica", size=8)
+
         self.text_label1 = tk.Label(
             self.text_frame,
             width=43,
@@ -114,7 +118,8 @@ class ArchetypiaGame:
             padx=15,
             pady=5,
             relief="solid",
-            bd=0
+            bd=0,
+            font=custom_font
         )
         self.text_label1.pack_forget()
 
@@ -128,7 +133,8 @@ class ArchetypiaGame:
             padx=15,
             pady=5,
             relief="solid",
-            bd=0
+            bd=0,
+            font=custom_font
         )
         self.text_label2.pack_forget()
 
@@ -150,7 +156,8 @@ class ArchetypiaGame:
             padx=8,
             pady=5,
             relief="solid",
-            bd=0
+            bd=0,
+            font=custom_font
         )
         self.interpretation_label.pack()
         # Verstecke den interpretation_frame_outer im ersten Fenster
