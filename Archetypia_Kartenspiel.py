@@ -47,7 +47,7 @@ color_schemes = [
         "bg_color_secondary": "#E67E22",
         "bg_color_button": "#F39C12",
         "text_color": "#FFFFFF",
-        "accent_color": "#3498DB",
+        "accent_color": "#FF8C00",
         "bg_color_window": "#E67E22"
     },
     {
