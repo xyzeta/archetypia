@@ -160,7 +160,7 @@ class ArchetypiaGame:
 
         self.change_color_button = tk.Button(
             self.button_frame,
-            text="Farbschema ändern",
+            text="Kosmische Farbwelten",
             command=self.change_color_scheme,
             relief="raised",
             bg=self.current_color_scheme["bg_color_button"],
