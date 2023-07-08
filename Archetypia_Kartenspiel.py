@@ -4,131 +4,21 @@ import random
 import json
 from PIL import ImageTk, Image
 
-color_schemes = [
-    {
-        "name": "Blautöne",
-        "bg_color_primary": "#2C3E50",
-        "bg_color_secondary": "#34495E",
-        "bg_color_button": "#2980B9",
-        "text_color": "#FFFFFF",
-        "accent_color": "#E74C3C",
-        "bg_color_window": "#34495E"
-    },
-    {
-        "name": "Blau-Gold",
-        "bg_color_primary": "#0000FF",
-        "bg_color_secondary": "#4169E1",
-        "bg_color_button": "#6495ED",
-        "text_color": "#FFD700",
-        "accent_color": "#E74C3C",
-        "bg_color_window": "#4169E1"
-    },
-    {
-        "name": "Rottöne",
-        "bg_color_primary": "#8E353D",
-        "bg_color_secondary": "#A93241",
-        "bg_color_button": "#C0392B",
-        "text_color": "#FFFFFF",
-        "accent_color": "#F39C12",
-        "bg_color_window": "#8E353D"
-    },
-    {
-        "name": "Kräftige Rottöne",
-        "bg_color_primary": "#FF0000",
-        "bg_color_secondary": "#FF4500",
-        "bg_color_button": "#DC143C",
-        "text_color": "#FFFFFF",
-        "accent_color": "#FF8C00",
-        "bg_color_window": "#FF4500"
-    },
-    {
-        "name": "Violetttöne",
-        "bg_color_primary": "#6C3483",
-        "bg_color_secondary": "#7D3C98",
-        "bg_color_button": "#8E44AD",
-        "text_color": "#FFFFFF",
-        "accent_color": "#F1C40F",
-        "bg_color_window": "#7D3C98"
-    },
-    {
-        "name": "Grüntöne",
-        "bg_color_primary": "#1E8449",
-        "bg_color_secondary": "#27AE60",
-        "bg_color_button": "#2ECC71",
-        "text_color": "#FFFFFF",
-        "accent_color": "#F39C12",
-        "bg_color_window": "#27AE60"
-    },
-    {
-        "name": "Orangetöne",
-        "bg_color_primary": "#D35400",
-        "bg_color_secondary": "#E67E22",
-        "bg_color_button": "#F39C12",
-        "text_color": "#FFFFFF",
-        "accent_color": "#3498DB",
-        "bg_color_window": "#E67E22"
-    },
-    {
-        "name": "Grautöne",
-        "bg_color_primary": "#555555",
-        "bg_color_secondary": "#777777",
-        "bg_color_button": "#999999",
-        "text_color": "#FFFFFF",
-        "accent_color": "#FF0000",
-        "bg_color_window": "#333333"
-    },
-    {
-        "name": "Pastellfarben",
-        "bg_color_primary": "#F9E79F",
-        "bg_color_secondary": "#AED6F1",
-        "bg_color_button": "#F5B7B1",
-        "text_color": "#333333",
-        "accent_color": "#C39BD3",
-        "bg_color_window": "#D7BDE2"
-    },
-    {
-        "name": "Sonnenuntergang",
-        "bg_color_primary": "#F4D03F",
-        "bg_color_secondary": "#E59866",
-        "bg_color_button": "#DC7633",
-        "text_color": "#FFFFFF",
-        "accent_color": "#F4D03F",
-        "bg_color_window": "#E67E22"
-    },
-    {
-        "name": "Herbstlaub",
-        "bg_color_primary": "#D35400",
-        "bg_color_secondary": "#8E44AD",
-        "bg_color_button": "#E74C3C",
-        "text_color": "#FFFFFF",
-        "accent_color": "#27AE60",
-        "bg_color_window": "#E67E22"
-    },
-    {
-        "name": "Pastellblüten",
-        "bg_color_primary": "#FADBD8",
-        "bg_color_secondary": "#85C1E9",
-        "bg_color_button": "#F8C471",
-        "text_color": "#333333",
-        "accent_color": "#E67E22",
-        "bg_color_window": "#F9E79F"
-    }
-]
 
 class ArchetypiaGame:
     def __init__(self, root):
         self.root = root
         self.root.title("Archetypia")
-        random.shuffle(color_schemes)  # Mischt die Reihenfolge der Farbschemata
-        self.current_color_scheme = color_schemes[0]  # Wählt das erste Farbschema
+        self.color_schemes = self.load_color_schemes()
+        random.shuffle(self.color_schemes)  # Mischt die Reihenfolge der Farbschemata
+        self.current_color_scheme = self.color_schemes[0]  # Wählt das erste Farbschema
         self.interpretations = self.load_interpretations()
 
-        self.root.wm_attributes("-topmost", 1)
         self.root.wm_attributes("-topmost", 1)
 
         # Fenstergröße
         window_width = 800
-        window_height = 870
+        window_height = 875
 
         # Bildschirmgröße
         screen_width = self.root.winfo_screenwidth()
@@ -143,6 +33,15 @@ class ArchetypiaGame:
 
         self.create_widgets()
         self.apply_color_scheme()
+
+    def load_color_schemes(self):
+        with open("color_schemes.json") as f:
+            color_schemes = json.load(f)
+        return color_schemes
+
+    def apply_color_scheme(self):
+        self.root.configure(bg=self.current_color_scheme["bg_color_window"])
+        # Weitere Anpassungen der Farbschemata
 
 
     def load_interpretations(self):
@@ -159,7 +58,7 @@ class ArchetypiaGame:
 
         self.image = ImageTk.PhotoImage(file="Archetypia_Journey_662x142_Bild.gif")
         self.image_label1 = tk.Label(self.image_frame, image=self.image, anchor='w',
-                                     pady=0, relief="solid", bd=0.5)
+                                     pady=0, relief="solid", bd=0)
         self.image_label1.pack(side=tk.LEFT)
 
         #Beginn Startseite Text
@@ -171,16 +70,16 @@ class ArchetypiaGame:
 
         word_count = len(text.split())
         padx = word_count // 3  # Anpassung des Wertes, um den gewünschten Abstand zu erhalten
-        text_width = 70  # Neue Breite des text_widget
+        text_width = 70  # Neue Breite des text_widget / in replit 80
 
-        self.text_widget = tk.Text(self.container_frame, width=text_width, height=20, relief="solid", bd=0.5, padx=padx, pady=30,
+        self.text_widget = tk.Text(self.container_frame, width=text_width, height=20, relief="solid", bd=0, padx=padx, pady=30,
                                    wrap=tk.WORD)
         self.text_widget.pack(side=tk.TOP, padx=0, pady=50)
         self.text_widget.insert(tk.END, text)
         self.text_widget.configure(state=tk.DISABLED)
         #Ende Startseite Text
 
-        self.image_label2 = tk.Label(self.image_frame, anchor='w', pady=0, relief="solid", bd=0.5)
+        self.image_label2 = tk.Label(self.image_frame, anchor='w', pady=0, relief="solid", bd=0) #das ist der label, der mit dem Kästchen am Startfenster sichtbar ist
         self.image_label2.pack(side=tk.LEFT)
 
         self.text_frame = tk.Frame(self.container_frame)
@@ -191,7 +90,7 @@ class ArchetypiaGame:
 
         self.text_label1 = tk.Label(
             self.text_frame,
-            width=43,
+            width=50, #auf replit 43 bei Schriftgröße 8
             height=8,
             wraplength=1 * 300 + 0,
             justify='left',
@@ -206,7 +105,7 @@ class ArchetypiaGame:
 
         self.text_label2 = tk.Label(
             self.text_frame,
-            width=43,
+            width=50, #auf replit 43 bei Schriftgröße 8
             height=8,
             wraplength=1 * 300 + 0,
             justify='left',
@@ -229,7 +128,7 @@ class ArchetypiaGame:
 
         self.interpretation_label = tk.Label(
             self.interpretation_frame,
-            width=92,
+            width=107, #auf replit 92 bei Schriftgröße 8
             height=7,
             wraplength=631,
             justify='left',
@@ -346,8 +245,7 @@ class ArchetypiaGame:
         return "Keine Interpretation gefunden."
 
     def change_color_scheme(self):
-        new_color_scheme = random.choice(color_schemes)
-        self.current_color_scheme = new_color_scheme
+        self.current_color_scheme = random.choice(self.color_schemes)
         self.apply_color_scheme()
 
     def apply_color_scheme(self):
